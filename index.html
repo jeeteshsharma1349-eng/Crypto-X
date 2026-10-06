@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070912">
+  <title>CryptoX — Premium Trading UI</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <div><strong>CryptoX</strong><span>Trading Suite</span></div>
+      </div>
+      <div class="top-actions">
+        <button class="pill" id="apiStatus"><i></i> Market API</button>
+        <button class="icon-btn" aria-label="Notifications">⌁</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-grid">
+        <article class="balance-card glass">
+          <div class="eyebrow">PORTFOLIO BALANCE</div>
+          <div class="balance" id="balance">₹10,000.00</div>
+          <div class="balance-row">
+            <span class="positive">+2.48% today</span>
+            <span class="muted">Practice ledger</span>
+          </div>
+          <div class="sparkline">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </article>
+        <article class="mini-card glass">
+          <div class="eyebrow">ACTIVE SLOTS</div>
+          <div class="big" id="activeSlots">0 / 5</div>
+          <div class="muted">per selected coin</div>
+        </article>
+        <article class="mini-card glass">
+          <div class="eyebrow">P&L</div>
+          <div class="big positive" id="pnl">₹0.00</div>
+          <div class="muted">session result</div>
+        </article>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <div class="eyebrow">MARKETS</div>
+          <h1>Quick Crypto</h1>
+          <p>Live-price ready • 30-second practice positions</p>
+        </div>
+        <input class="search" id="search" placeholder="Search coins">
+      </section>
+
+      <section class="coin-grid" id="coinGrid"></section>
+
+      <section class="trade-panel glass" id="tradePanel">
+        <div class="panel-head">
+          <div>
+            <div class="eyebrow">TRADE TICKET</div>
+            <h2 id="selectedName">Bitcoin <span>BTC</span></h2>
+          </div>
+          <div class="price-badge" id="selectedPrice">—</div>
+        </div>
+
+        <div class="form-grid">
+          <label>Investment
+            <div class="money-input"><span>₹</span><input id="amount" type="number" min="10" step="10" value="1000"></div>
+          </label>
+          <label>Return
+            <select id="returnRate">
+              <option value="5">5%</option>
+              <option value="10" selected>10%</option>
+              <option value="20">20%</option>
+            </select>
+          </label>
+          <label>Duration
+            <select disabled><option>30 seconds</option></select>
+          </label>
+        </div>
+
+        <div class="slot-row">
+          <div>
+            <span class="muted">Coin slots</span>
+            <div class="slots" id="slots"></div>
+          </div>
+          <div class="potential">
+            <span class="muted">Potential payout</span>
+            <strong id="potential">₹1,100.00</strong>
+          </div>
+        </div>
+
+        <div class="disclosure">
+          Practice/simulation mode. No real-money deposit, withdrawal, or guaranteed-return service is connected to this page.
+        </div>
+        <button class="primary-btn" id="placeTrade">Start 30s Practice Trade</button>
+      </section>
+
+      <section class="section-head compact">
+        <div>
+          <div class="eyebrow">ACTIVITY</div>
+          <h2>Trade History</h2>
+        </div>
+        <button class="text-btn" id="clearHistory">Clear</button>
+      </section>
+      <section class="history glass" id="history">
+        <div class="empty">No practice trades yet.</div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav active"><b>⌂</b><span>Home</span></button>
+      <button class="nav"><b>▣</b><span>Wallet</span></button>
+      <button class="nav"><b>↗</b><span>Refer</span></button>
+      <button class="nav"><b>⌁</b><span>Trades</span></button>
+      <button class="nav"><b>○</b><span>Profile</span></button>
+    </nav>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
